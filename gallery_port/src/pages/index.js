@@ -1,44 +1,26 @@
-import fs from 'fs';
-import path from 'path';
+import Link from 'next/link';
+import Layout from '@/components/Layout';
 import Image from 'next/image';
 
-export default function Home({ photos }) {
+export default function Home() {
   return (
-    <div>
-      <h1>My Photography Portfolio</h1>
-      <div className="gallery">
-        {photos.map((photo) => (
-          <div key={photo} className="photo">
-            <Image
-              src={`/images/${photo}`}
-              alt={photo}
-              width={800}
-              height={600}
-              layout="responsive"
-            />
-          </div>
-        ))}
+    <Layout>
+      <div className="text-center py-16">
+        <h1 className="text-5xl font-bold mb-4">Welcome to My Photography Portfolio</h1>
+        <p className="text-xl mb-8">Explore my albums and read my thoughts on photography.</p>
+
+        {/* Optional hero image */}
+        <div className="mb-8">
+          <Image
+            src="/images/album-digital/IMG_9093 ed.jpg" // Add a hero.jpg or replace this
+            alt="Hero shot"
+            width={500}
+            height={250}
+            className="rounded-lg mx-auto"
+          />
+        </div>
+
       </div>
-
-      <style jsx>{`
-        .gallery {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 1rem;
-          padding: 1rem;
-        }
-      `}</style>
-    </div>
+    </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const imagesDir = path.join(process.cwd(), 'public/images');
-  const photos = fs.readdirSync(imagesDir);
-
-  return {
-    props: {
-      photos,
-    },
-  };
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "film",
+    "title": "Film",
+    "description": "A small collection of my film photography.",
+    "folder": "album-film",
+    "tags": ["people", "studio", "black-and-white"],
+    "coverImage": "scan0006.jpg"
+  },
+  {
+    "slug": "digital",
+    "title": "Digital",
+    "description": "A small collection of my digital photography.",
+    "folder": "album-digital",
+    "tags": ["nature", "outdoor"],
+    "coverImage": "IMG_9093 ed.jpg"
+  }
+]
